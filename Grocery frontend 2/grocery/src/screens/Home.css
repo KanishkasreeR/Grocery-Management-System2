@@ -1,15 +1,3 @@
-/* modal.css */
-/* CSS for HomePage component */
-
-/* .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000; 
-  width: 100%;
-} */
-
 .navbar {
   position: fixed;
   top: 0;
@@ -22,7 +10,6 @@
   padding: 10px;
 }
 
-/* Admin content styles */
 .admin-content {
   padding: 15px;
 }
@@ -34,33 +21,33 @@
   .slider-container {
     width: 100vw;
     height: 100vh;
-    overflow: hidden; /* Hide overflowing content */
+    overflow: hidden; 
   }
   
   .slider-container .slick-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure images cover the entire slide */
+    object-fit: cover; 
   }
   
   .navbar {
-    background-color: #000; /* Black background */
+    background-color: #000; 
   }
   
   .navbar-brand {
-    color: #fff; /* White text */
+    color: #fff;
   }
   
   .navbar-nav .nav-link {
-    color: #fff !important; /* White text for links */
+    color: #fff !important; 
   }
   
   .dropdown-menu .dropdown-item {
-    color: #000; /* Black text for dropdown items */
+    color: #000; 
   }
   
   .dropdown-menu .dropdown-item:hover {
-    background-color: #555; /* Dark gray background on hover */
-    color: #fff; /* White text on hover */
+    background-color: #555; 
+    color: #fff; 
   }
   
