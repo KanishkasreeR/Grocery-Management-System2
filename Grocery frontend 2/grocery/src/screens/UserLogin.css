@@ -69,12 +69,12 @@ button:hover {
   position: absolute;
   right: 10px;
   cursor: pointer;
-  user-select: none; /* Prevents text selection on double-click */
+  user-select: none;
 }
 
 .popup-inner {
-  width: 400px; /* Adjust the width as needed */
-  margin: 0 auto; /* Center the modal box horizontally */
+  width: 400px; 
+  margin: 0 auto;
 }
 
 .popup-inner form {
