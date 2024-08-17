@@ -8,11 +8,9 @@ const Profile = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // State to manage the edited profile data
   const [editedAdmin, setEditedAdmin] = useState(null);
 
   useEffect(() => {
-    // Check if admin ID is stored in local storage
     const storedAdminId = localStorage.getItem("adminId");
 
     if (storedAdminId) {
@@ -30,7 +28,6 @@ const Profile = () => {
       }
       const data = await response.json();
       setAdmin(data.admin);
-      // Initialize editedAdmin with fetched admin data
       setEditedAdmin(data.admin);
       setLoading(false);
     } catch (error) {
@@ -38,8 +35,6 @@ const Profile = () => {
       setLoading(false);
     }
   };
-
-  // Handle form input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setEditedAdmin({
@@ -48,7 +43,6 @@ const Profile = () => {
     });
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -62,9 +56,7 @@ const Profile = () => {
       if (!response.ok) {
         throw new Error('Failed to update admin details');
       }
-      // Update the admin state with the edited data
       setAdmin(editedAdmin);
-      // Reset editedAdmin state
       setEditedAdmin(null);
     } catch (error) {
       console.error('Error updating admin details:', error);
@@ -73,7 +65,6 @@ const Profile = () => {
   };
 
   useEffect(() => {
-    // Store admin ID locally
     localStorage.setItem("adminId", adminId);
   }, [adminId]);
 
