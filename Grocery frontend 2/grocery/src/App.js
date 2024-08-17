@@ -25,7 +25,7 @@ const Routes = () => {
       <Route path = "/userRegister" element = {<UserRegisterPopup/>}/>
       <Route path="/adminhome" element={<AdminHome />}/>
       <Route path="/addproduct" element={<AddProduct />} />
-      <Route path="/UpdateProduct/:id" element={<UpdateProduct />} /> {/* Corrected route */}
+      <Route path="/UpdateProduct/:id" element={<UpdateProduct />} /> 
       <Route path="/adminprofile" element={<Profile />} />
       <Route path="/customerhome" element={<CustomerHome />} />
       <Route path="/products" element={<Products />} />
