@@ -16,10 +16,10 @@ jobs:
         ports:
           - 27017:27017
         options: >-
-          --health-cmd "mongo --eval 'db.runCommand({ ping: 1 })'"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
+          --health-cmd="mongosh --eval 'db.runCommand({ ping: 1 })'"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
 
     steps:
       - name: Checkout code
@@ -35,6 +35,15 @@ jobs:
           cd backend
           npm install
 
+      - name: Wait for MongoDB to be ready
+        run: |
+          for i in {1..10}; do
+            nc -z localhost 27017 && echo "MongoDB is up!" && exit 0
+            echo "Waiting for MongoDB..."
+            sleep 2
+          done
+          echo "MongoDB did not become available in time." && exit 1
+
       - name: Run backend tests
         run: |
           cd backend
@@ -48,4 +57,4 @@ jobs:
       - name: Run frontend build
         run: |
           cd frontend
-          npm run build
+          CI=true npm run build
